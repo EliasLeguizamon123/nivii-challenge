@@ -8,6 +8,10 @@ RUN yarn install --frozen-lockfile
 
 COPY . .
 
+ARG NEXT_PUBLIC_API_URL=https://default-url.com
+
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
 RUN yarn build
 
 EXPOSE 3000
